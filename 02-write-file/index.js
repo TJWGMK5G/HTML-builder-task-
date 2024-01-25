@@ -19,7 +19,7 @@ const readline = require('readline').createInterface({
 const filePath = '02-write-file/textTest.txt';
 
 const exitProcess = () => {
-  console.log('\nFarewell! Exiting the process.');
+  console.log('\nGoodbye!');
   readline.close();
   process.exit();
 };
@@ -29,7 +29,7 @@ process.on('SIGINT', exitProcess);
 (async () => {
   try {
     await fs.access(filePath);
-    console.log('File exists. Appending new text.');
+    console.log('Appending new text.');
   } catch (err) {
     console.log('File does not exist. Creating a new file.');
   }

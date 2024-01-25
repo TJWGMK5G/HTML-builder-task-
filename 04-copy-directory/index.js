@@ -38,12 +38,12 @@ async function copyDir(source, destination) {
 
       await fs.writeFile(destinationPath, await fs.readFile(sourcePath));
 
-      console.log(`Файл ${file} успешно скопирован.`);
+      console.log(`Файл ${file} скопирован.`);
     }
 
     console.log('Копирование завершено.');
   } catch (err) {
-    console.error('Произошла ошибка при копировании:', err);
+    console.error('Ошибка', err);
   }
 }
 

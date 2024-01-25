@@ -16,7 +16,7 @@ async function mergeStyles() {
 
     console.log(`Стили успешно объединены в ${bundleFile}`);
   } catch (err) {
-    console.error('Возникла ошибка при объединении стилей:', err);
+    console.error('Возникла ошибка:', err);
   }
 }
 

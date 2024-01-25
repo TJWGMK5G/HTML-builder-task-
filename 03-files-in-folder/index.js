@@ -17,7 +17,6 @@ async function printFileInfo() {
         const { size } = stats, [name, ext] = file.split('.');
         console.log(`${name}-${ext}-${(size / 1024).toFixed(3)}kb`);
       } else {
-        console.error(`Error: ${file} is a directory. Skipping.`);
       }
     }
   } catch (err) {

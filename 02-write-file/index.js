@@ -31,7 +31,7 @@ process.on('SIGINT', exitProcess);
     await fs.access(filePath);
     console.log('Добавление нового текста.');
   } catch (err) {
-    console.log('Файл не существует. Создание нового файла.');
+    console.log('Файла не существует.');
   }
 
   while (true) {

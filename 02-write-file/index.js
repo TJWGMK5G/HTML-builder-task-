@@ -19,7 +19,7 @@ const readline = require('readline').createInterface({
 const filePath = '02-write-file/textTest.txt';
 
 const exitProcess = () => {
-  console.log('\nGoodbye!');
+  console.log('\nДо свидания!');
   readline.close();
   process.exit();
 };
@@ -29,19 +29,19 @@ process.on('SIGINT', exitProcess);
 (async () => {
   try {
     await fs.access(filePath);
-    console.log('Appending new text.');
+    console.log('Добавление нового текста.');
   } catch (err) {
-    console.log('File does not exist. Creating a new file.');
+    console.log('Файл не существует. Создание нового файла.');
   }
 
   while (true) {
     const userInput = await new Promise(resolve =>
-      readline.question('Enter text (or type "exit" to quit): ', resolve)
+      readline.question('Введите текст (или введите "exit", чтобы выйти): ', resolve)
     );
 
     if (userInput.toLowerCase() === 'exit') exitProcess();
 
     await fs.appendFile(filePath, userInput + '\n', 'utf-8');
-    console.log('Text appended to "textTest.txt".');
+    console.log('Текст добавлен в файл "textTest.txt".');
   }
 })();
